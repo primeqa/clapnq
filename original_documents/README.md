@@ -1,0 +1,1 @@
+This directory contains the original NQ data in TyDI format (https://github.com/google-research-datasets/tydiqa) the full document for each Question/Passage/Answer is available here. This data was used to build the retrieval corpus. We provide the data in TyDI format instead of NQ format for a cleaner version that excludes HTML.
