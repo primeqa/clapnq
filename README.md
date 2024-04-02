@@ -1,12 +1,28 @@
 # :clap: CLAP NQ: Cohesive Long-form Answers from Passages in Natural Questions
 
-Retrieval Augmented Generation (RAG) has become a popular application for large language models. It is preferable that successful RAG systems provide accurate answers that are supported by being grounded in a passage without any hallucinations. While considerable work is required for building a full RAG pipeline, being able to benchmark performance is also necessary.  We present CLAP NQ, a benchmark Long-form Question Answering dataset for the full RAG pipeline. CLAP NQ includes long answers with grounded gold passages from Natural Questions (NQ) and a corpus to perform either retrieval, generation, or the full RAG pipeline. The CLAP NQ answers are concise, 3x smaller than the full passage, and cohesive, with multiple pieces of the passage that are not contiguous. 
+**[Description](#description) | [Paper](#paper) | [Data](#data) | [Results](#results) | [Contact](#contact)**
+
+Retrieval Augmented Generation (RAG) has become a popular application for large language models. It is preferable that successful RAG systems provide accurate answers that are supported by being grounded in a passage without any hallucinations. While considerable work is required for building a full RAG pipeline, being able to benchmark performance is also necessary.  We present CLAP NQ, a benchmark Long-form Question Answering dataset for the full RAG pipeline. CLAP NQ includes long answers with grounded gold passages from Natural Questions (NQ) and a corpus to perform either retrieval, generation, or the full RAG pipeline. The CLAP NQ answers are *concise*, 3x smaller than the full passage, and *cohesive*, with multiple pieces of the passage that are not contiguous. 
 
 # Description
 
 CLAP NQ is created from the subset of [Natural Questions](https://ai.google.com/research/NaturalQuestions) (NQ) that have a long answer but no short answer. NQ consists of ~380k examples. There are ~30k questions that are long answers without short answers excluding tables and lists. To increases the likelihood of longer answers we only explored ones that have more than 5 sentences in the passage. The subset that was annotated consists of ~12k examples. All examples where cohesion of non-consecutive sentences was required for the answer were annotated a second time. The final dataset is made up of all data that went through two rounds of annotation. (We provide the single round annotations as well - it is only training data) An equal amount of unanswerable questions have also been added from the original NQ train/dev sets. Details about the annotation task and unanswerables can be found [here](annotated_data).
 
-# Data Stats
+# Paper
+
+The paper is available on Arxiv: 
+
+# Data 
+
+We provide the following data:
+
+Data | Description
+--- | ---
+[CLAPNQ Annotations](annotated_data)   | The CLAP NQ annotated training and dev data
+[Original Documents](original_documents) | The original Wikipedia documents for each CLAP NQ question
+[Retrieval](retrieval) | The data in retrieval format for ingesting
+
+## Data Stats
 
 Split | No. Questions | Answerable | Source | Unanswerable | Source
 --- | --- | --- | --- | --- | --- 
@@ -19,23 +35,13 @@ Note 1 : All answerable questions are non-consecutive except for 13 questions in
 
 Note 2: We include training examples in the dev and test sets because there were only 67 non-consecutive examples in the dev set.  
 
-# Data 
-
-We provide the following data:
-
-Data | Description
---- | ---
-[CLAPNQ Annotations](annotated_data)   | The CLAP NQ annotated training and dev data
-[Original Documents](original_documents) | The original Wikipedia documents for each CLAP NQ question
-[Retrieval](retrieval) | The data in retrieval format for ingesting
-
 ## Test Data
 
 We are keeping the test data hidden. If you feel you should have access to the test data please contact us with your request.
 
-# Output Format
+## Data Format
 
-The output is available in jsonl format, with one question on each line. The output follows the KILT-ELI5 format. Each line consists of the following:
+The data is available in jsonl format, with one question on each line. The output follows the KILT-ELI5 format, with additional metadata. Each line consists of the following:
 
 ```
 id: original NQ id
@@ -48,7 +54,7 @@ meta information:
   round: Whether the annotation is from round 1 or 2 (if both rounds are the same it will say round 2)
 ```
 
-## Answerable Example
+### Answerable Example
 
 ```
 {
@@ -97,7 +103,7 @@ meta information:
 }
 ```
 
-## Unanswerable Example
+### Unanswerable Example
 ```
 {
   "id": 2769033134349167616,
