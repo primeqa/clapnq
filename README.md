@@ -10,7 +10,7 @@ CLAP NQ is created from the subset of [Natural Questions](https://ai.google.com/
 
 # Paper
 
-The paper is available on Arxiv: 
+The paper is available on Arxiv: [https://arxiv.org/abs/2404.02103](https://arxiv.org/abs/2404.02103)
 
 # Data 
 
