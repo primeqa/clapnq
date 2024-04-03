@@ -10,6 +10,28 @@ data | split | answerable | round | count
 [ClapNQ_dev_answerable.jsonl](dev/clapnq_dev_answerable.jsonl) | dev | Y | 2 | 300
 [ClapNQ_dev_unanswerable.jsonl](dev/clapnq_dev_unanswerable.jsonl) | dev | N | 2 | 300
 
+# Huggingface
+
+The data is also available on HuggingFace: https://huggingface.co/datasets/PrimeQA/clapnq
+
+## Usage:
+```
+from datasets import load_dataset
+
+dataset = load_dataset("PrimeQA/clapnq")
+
+print(f"train: {len(dataset['train'])}")
+print(f"dev: {len(dataset['validation'])}")
+
+print(dataset['train'][0])
+```
+Output:
+```
+train: 3745
+dev: 600
+{'id': '8045984229282682032', 'input': "who sang love the one you're with first", 'passages': [{'title': "Love the One You're With", 'text': "`` Love the One You 're With '' is a song by folk rocker Stephen Stills . It was released as the lead single from his debut self - titled studio album in November 1970 . The song , inspired by a remark Stills heard from musician Billy Preston , became his biggest hit single , peaking at No. 14 on the Billboard Hot 100 in early 1971 . David Crosby and Graham Nash , Stills ' fellow members of Crosby , Stills & Nash , provide background vocals on the song . The song was also covered by a number of artists , including The Isley Brothers , Bucks Fizz , and Luther Vandross . ", 'sentences': ["`` Love the One You 're With '' is a song by folk rocker Stephen Stills .", 'It was released as the lead single from his debut self - titled studio album in November 1970 .', 'The song , inspired by a remark Stills heard from musician Billy Preston , became his biggest hit single , peaking at No. 14 on the Billboard Hot 100 in early 1971 .', "David Crosby and Graham Nash , Stills ' fellow members of Crosby , Stills & Nash , provide background vocals on the song .", 'The song was also covered by a number of artists , including The Isley Brothers , Bucks Fizz , and Luther Vandross .']}], 'output': [{'answer': "`` Love the One You 're With '' is a song by folk rocker Stephen Stills . David Crosby and Graham Nash , Stills ' fellow members of Crosby , Stills & Nash , provide background vocals on the song . The song was also covered by a number of artists , including The Isley Brothers , Bucks Fizz , and Luther Vandross .", 'selected_sentences': ["`` Love the One You 're With '' is a song by folk rocker Stephen Stills .", "David Crosby and Graham Nash , Stills ' fellow members of Crosby , Stills & Nash , provide background vocals on the song .", 'The song was also covered by a number of artists , including The Isley Brothers , Bucks Fizz , and Luther Vandross .'], 'meta': {'annotator': [47200615, 46373812], 'has_minimal_answer': False, 'non_consecutive': True, 'round': 2, 'skip': False}}]}
+```
+
 # Data Creation and Annotation
 
 ## Original NQ 
