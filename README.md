@@ -12,6 +12,17 @@ CLAP NQ is created from the subset of [Natural Questions](https://ai.google.com/
 
 The paper is available on Arxiv: [https://arxiv.org/abs/2404.02103](https://arxiv.org/abs/2404.02103)
 
+```
+@misc{rosenthal2024clapnq,
+      title={CLAPNQ: Cohesive Long-form Answers from Passages in Natural Questions for RAG systems}, 
+      author={Sara Rosenthal and Avirup Sil and Radu Florian and Salim Roukos},
+      year={2024},
+      eprint={2404.02103},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+```
+
 # Data 
 
 We provide the following data:
