@@ -1,6 +1,6 @@
 # :clap: CLAP NQ: Cohesive Long-form Answers from Passages in Natural Questions
 
-**[Description](#description) | [Paper](#paper) | [Data](#data) | [Results](#results) | [Contact](#contact)**
+**[Description](#description) | [Paper](#paper) | [Data](#data) | [Results](#results) | [Notebooks](#notebooks) :new: | [Contact](#contact)**
 
 Retrieval Augmented Generation (RAG) has become a popular application for large language models. It is preferable that successful RAG systems provide accurate answers that are supported by being grounded in a passage without any hallucinations. While considerable work is required for building a full RAG pipeline, being able to benchmark performance is also necessary.  We present CLAP NQ, a benchmark Long-form Question Answering dataset for the full RAG pipeline. CLAP NQ includes long answers with grounded gold passages from Natural Questions (NQ) and a corpus to perform either retrieval, generation, or the full RAG pipeline. The CLAP NQ answers are *concise*, 3x smaller than the full passage, and *cohesive*, with multiple pieces of the passage that are not contiguous. 
 
@@ -143,6 +143,15 @@ meta information:
 # Results
 
 Please refer to the paper for baseline experiments.
+
+# Notebooks
+
+We provide the following notebooks:
+
+|  | Notebook | Description | 
+| -- | -- | -- |
+| Load with Huggingface | [notebooks/load_hf.ipynb](notebooks/load_hf.ipynb) | Simple notebook showing how to load with HF and see the data |
+| Load with Unitxt | [notebooks/load_unitxt.ipynb](notebooks/load_unitxt.ipynb) | Notebook showing how to load with unitxt, see the data, and run evaluation |
 
 # References 
 
